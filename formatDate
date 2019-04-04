@@ -1,0 +1,26 @@
+function formatDate(d, format){
+    let finalDate;
+    switch (format){
+        case 1:
+            finalDate = (d.getMonth()+1) + "-" + d.getDay() + "-" + d.getFullYear();
+            break;
+        case 2:
+            finalDate = (d.getMonth()+1) + "/" + d.getDay() + "/" + d.getFullYear();
+            break;
+        case 3:
+            finalDate = d.getDay() + "-" + (d.getMonth()+1) + "-" + d.getFullYear();
+            break;
+        case 4:
+            finalDate = d.getDay() + "/" + (d.getMonth()+1) + "/" + d.getFullYear();
+            break;
+    }
+    return finalDate;
+}
+
+let d = new Date();
+
+let option = 0;
+while (option == 0)
+  option = Math.floor(Math.random()*4);
+
+document.body.innerHTML = formatDate(d, option);
